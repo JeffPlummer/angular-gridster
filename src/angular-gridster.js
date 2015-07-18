@@ -1339,7 +1339,8 @@
 				function mouseDown(e) {
 					if ((inputTags.indexOf(e.target.nodeName.toLowerCase()) !== -1) ||
 						(inputTags.indexOf(e.target.parentNode.nodeName.toLowerCase()) !== -1) ||
-						(e.target.className.indexOf("ql") !== -1)) {
+						(e.target.className.indexOf("ql") !== -1) ||
+						(e.target.parentNode.className.indexOf("ql") !== -1)) {
 						return false;
 					}
 
