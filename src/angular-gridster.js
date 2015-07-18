@@ -1334,10 +1334,12 @@
 					realdocument = $document[0];
 
 				var originalCol, originalRow;
-				var inputTags = ['select', 'input', 'textarea', 'button'];
+				var inputTags = ['select', 'input', 'textarea', 'button', 'ng-quill-editor', 'a'];
 
 				function mouseDown(e) {
-					if (inputTags.indexOf(e.target.nodeName.toLowerCase()) !== -1) {
+					if ((inputTags.indexOf(e.target.nodeName.toLowerCase()) !== -1) ||
+						(inputTags.indexOf(e.target.parentNode.nodeName.toLowerCase()) !== -1) ||
+						(e.target.className.indexOf("ql") !== -1)) {
 						return false;
 					}
 
